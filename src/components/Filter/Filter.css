@@ -1,0 +1,4 @@
+.Filter > .Filter__gender {
+  display: flex;
+  flex-direction: column;
+}

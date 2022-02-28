@@ -39,7 +39,7 @@ const DrawerMenu = () => {
         placement="right"
         onClose={onClose}
         visible={visible}
-        width={"50%"}
+        width={"80%"}
         closable={false}
       >
         <Menu mode="inline">

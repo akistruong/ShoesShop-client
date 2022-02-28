@@ -1,0 +1,7 @@
+.ProductCard {
+  width: 100%;
+  min-height: 350px;
+}
+.ProductCard a > .ProductCard__info {
+  text-align: center;
+}

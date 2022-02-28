@@ -29,8 +29,12 @@ const DrawerMenu = () => {
   };
 
   return (
-    <>
-      <MenuOutlined onClick={showDrawer} className="icons icon__Menu" />
+    <div className="Drawer">
+      <MenuOutlined
+        onClick={showDrawer}
+        className="icons icon__Menu"
+        style={{ display: "block" }}
+      />
       <Drawer
         placement="right"
         onClose={onClose}
@@ -64,7 +68,7 @@ const DrawerMenu = () => {
           })}
         </Menu>
       </Drawer>
-    </>
+    </div>
   );
 };
 

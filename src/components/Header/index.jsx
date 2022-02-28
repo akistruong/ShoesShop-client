@@ -37,7 +37,9 @@ const Header = () => {
   return (
     <div className="Header">
       <section>
-        <div className="Header__logo">LOGO</div>
+        <div className="Header__logo LOGO">
+          THESHOES <span className="LOGO__STYLE">@kiettruong</span>
+        </div>
         <div className="Header__menu--large__device">
           <Dropdown overlay={menu}>
             <a href="#">Click Me</a>
@@ -49,15 +51,11 @@ const Header = () => {
             <a href="#">Click Me</a>
           </Dropdown>
         </div>
-        {/* <div className="Header__menu--small__device">
-          <Search />
-          <ShoppingCartOutlined className="icons icon__Cart" />
-          <Drawer />
-        </div> */}
         {/* Common Large device and small device */}
         <div className="Header__actions">
           <Search />
           <ShoppingCartOutlined className="icons icon__Cart" />
+          <Drawer />
         </div>
       </section>
     </div>

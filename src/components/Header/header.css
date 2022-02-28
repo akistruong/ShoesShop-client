@@ -29,14 +29,12 @@
 .Action__Search {
   width: 100%;
 }
+.Header__actions > .icon__Cart {
+  padding: 0 10px;
+}
 /* SMALL DEVICE */
 .Header__menu--small__device {
   position: relative;
-}
-.Header__menu--small__device > .icon__Cart {
-  padding: 0 10px;
-  position: relative;
-  top: -1px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -47,15 +45,15 @@
     display: flex;
     align-items: center;
   }
-  .Header__actions {
-    /* flex: 1; */
-  }
 }
 @media screen and (min-width: 1024px) {
   .Header__menu--large__device {
     display: block;
   }
   .Header__menu--small__device {
+    display: none;
+  }
+  .Header__actions > .Drawer {
     display: none;
   }
 }

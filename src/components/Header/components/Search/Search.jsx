@@ -18,12 +18,12 @@ const UseOutsideAlerter = (ref, open, setOpen) => {
 };
 const SearchOpen = ({ open, setOpen }) => {
   const SearchRef = useRef();
-  const [openResult, setOpenResult] = useState(true);
+  const [openResult, setOpenResult] = useState(false);
   UseOutsideAlerter(SearchRef, open, setOpen);
   return (
     <>
       <div className="Search__open" ref={SearchRef}>
-        <div className="SearchOpen__logo">LOGO</div>
+        <div className="SearchOpen__logo LOGO">THESHOES</div>
         <div className="SearchOpen__Search">
           <input className="Search__input" placeholder="Search" />
           <SearchOutlined className="Search__icon--search" />
@@ -31,6 +31,7 @@ const SearchOpen = ({ open, setOpen }) => {
         <CloseOutlined
           className="Search__icon--close"
           onClick={() => setOpen(!open)}
+          style={{ fontSize: "5px" }}
         />
         {openResult && <div className="Search__result">THIS IS RESULT</div>}
       </div>

@@ -16,23 +16,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.icons {
-}
+
 @media screen and (max-width: 1024px) {
   section {
     padding: 0 20px;
   }
 }
+.icons {
+  display: block;
+}
 svg {
-  font-size: 20px;
+  font-size: 35px;
   cursor: pointer;
 }
 .Search__icon--search > svg {
-  font-size: 25px;
+  font-size: 30px;
+}
+.LOGO {
+  font-size: 30px;
+  font-weight: 700;
+}
+.LOGO__STYLE {
+  display: none;
+  font-size: 10px;
+  color: #313552;
+  /* opacity: 0.9; */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 4px;
 }
 @media screen and (min-width: 1024px) {
   section {
     padding: 0 50px;
+  }
+  .LOGO__STYLE {
+    display: inline;
   }
   svg {
     font-size: 30px;

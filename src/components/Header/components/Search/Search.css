@@ -1,4 +1,5 @@
 .SearchComponent {
+  margin-top: 6px;
 }
 .Search__open {
   display: flex;
@@ -7,15 +8,14 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: -8px;
+  top: -20px;
   padding: 40px;
   background-color: white;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .Search__open > .SearchOpen__Search {
   position: relative;
+  width: 100%;
 }
 .Search__open > .SearchOpen__Search .Search__input {
   width: 100%;
@@ -34,16 +34,21 @@
 .Search__result {
 }
 @media screen and (max-width: 1024px) {
+  .Search__open {
+    padding: 40px 10px;
+  }
   .Search__open > .SearchOpen__Search .Search__input {
     width: 100%;
     padding: 10px 40px;
     border-radius: 4px;
     outline: none;
-    border: unset;
   }
   .SearchOpen__logo {
     display: none;
   }
 }
 @media screen and (min-width: 1024px) {
+  .Search__open > .SearchOpen__Search {
+    width: 50%;
+  }
 }

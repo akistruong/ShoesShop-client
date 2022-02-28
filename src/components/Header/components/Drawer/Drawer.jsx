@@ -42,19 +42,19 @@ const DrawerMenu = () => {
           {MenuData.map((menu, index) => {
             return (
               <Menu.SubMenu title={menu.type} key={index}>
-                <Menu.SubMenu title="Featured">
+                <Menu.SubMenu title="Featured" key={`${index}-Featured`}>
                   {menu.featureds.map((feature) => (
                     <Menu.Item>{feature}</Menu.Item>
                   ))}
                 </Menu.SubMenu>
 
-                <Menu.SubMenu title="Brand">
+                <Menu.SubMenu title="Brand" key={`${index}-Brand`}>
                   {menu.brands.map((brand) => (
                     <Menu.Item>{brand}</Menu.Item>
                   ))}
                 </Menu.SubMenu>
 
-                <Menu.SubMenu title="Sale">
+                <Menu.SubMenu title="Sale" key={`${index}-Sale`}>
                   {menu.sales.map((sales) => (
                     <Menu.Item>{sales}</Menu.Item>
                   ))}

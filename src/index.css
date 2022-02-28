@@ -6,7 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+* {
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -18,8 +23,19 @@ code {
     padding: 0 20px;
   }
 }
+svg {
+  font-size: 20px;
+  cursor: pointer;
+}
+.Search__icon--search > svg {
+  font-size: 25px;
+}
 @media screen and (min-width: 1024px) {
   section {
     padding: 0 50px;
+  }
+  svg {
+    font-size: 30px;
+    cursor: pointer;
   }
 }

@@ -4,9 +4,7 @@ import { Layout } from "antd";
 function App() {
   return (
     <div className="App">
-      <section>
-        <Header />
-      </section>
+      <Header />
     </div>
   );
 }

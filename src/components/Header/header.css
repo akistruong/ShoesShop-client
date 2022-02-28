@@ -12,7 +12,9 @@
   background-color: red;
   padding: 25px;
 }
-
+.Menu__Overlay > .Menu__item {
+  margin: 0 10px;
+}
 .Header__menu--large__device > a {
   margin: 0 10px;
 }

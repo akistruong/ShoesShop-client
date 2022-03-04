@@ -3,5 +3,12 @@ import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import "./index.css";
 import App from "./App";
+import Store from "./store";
+import { Provider } from "react-redux";
+ReactDOM.render(
+  <Provider store={Store}>
+    <App />
+  </Provider>,
 
-ReactDOM.render(<App />, document.getElementById("root"));
+  document.getElementById("root")
+);

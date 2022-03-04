@@ -33,7 +33,7 @@ svg {
   font-size: 30px;
 }
 .LOGO {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
 }
 .LOGO__STYLE {
@@ -54,6 +54,9 @@ img {
 @media screen and (min-width: 1024px) {
   section {
     padding: 0 50px;
+  }
+  .LOGO {
+    font-size: 30px;
   }
   .LOGO__STYLE {
     display: inline;

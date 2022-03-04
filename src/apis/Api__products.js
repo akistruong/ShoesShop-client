@@ -8,6 +8,14 @@ const ProductApi = {
     const url = `products/${id}`;
     return axiosClient.get(url);
   },
+  deleteProduct: (id) => {
+    const url = `products/${id}`;
+    return axiosClient.delete(url);
+  },
+  updateProduct: (id, body) => {
+    const url = `products/${id}`;
+    return axiosClient.patch(url, body);
+  },
 };
 
 export default ProductApi;

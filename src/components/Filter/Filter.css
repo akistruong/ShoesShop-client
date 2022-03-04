@@ -1,4 +1,10 @@
-.Filter > .Filter__gender {
-  display: flex;
-  flex-direction: column;
+.Filter {
+  width: 100%;
+  max-width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  padding: 10px;
+}
+.Filter > div {
+  padding: 4px;
+  border-bottom: 1px solid rgb(161, 156, 156);
 }

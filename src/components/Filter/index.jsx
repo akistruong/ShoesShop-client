@@ -1,17 +1,28 @@
 import React from "react";
 import "./Filter.css";
-import { Checkbox } from "antd";
+import FilterGender from "./components/Filter__gender";
+import FilterColor from "./components/Filter__color";
+import FilterSize from "./components/Filter__size";
+import FilterBrand from "./components/Filter__brand";
 const Filter = ({ gender, size, colour }) => {
   return (
     <div className="Filter">
       <div className="Filter__gender">
-        <Checkbox>Nam</Checkbox>
-        <Checkbox>Nữ</Checkbox>
-        <Checkbox>Unisex</Checkbox>
+        <h4>GENDER</h4>
+        <FilterGender />
       </div>
-      <div className="Filter__size"></div>
-      <div className="Filter__colour"></div>
-      <div className="Filter__brand"></div>
+      <div className="Filter__size">
+        <h4>SIZE</h4>
+        <FilterSize />
+      </div>
+      <div className="Filter__colour">
+        <h4>Colour</h4>
+        <FilterColor />
+      </div>
+      <div className="Filter__brand">
+        <h4>Brand</h4>
+        <FilterBrand />
+      </div>
     </div>
   );
 };

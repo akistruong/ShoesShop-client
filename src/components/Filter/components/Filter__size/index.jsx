@@ -1,23 +1,28 @@
 import React from "react";
 import { Checkbox, Col, Row } from "antd";
-const FilterSize = ({ gender }) => {
-  const plainOptions = ["Nam", "Nữ", "Unisex"];
+import { useDispatch } from "react-redux";
+import * as ProductApi from "../../../../features/Product/ProductSliceApi";
+const FilterSize = ({ sizes, setSizes }) => {
+  const dispatch = useDispatch();
+  const plainOptions = [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
   const onChange = (e) => {
-    console.log(e);
+    setSizes(e);
   };
   return (
     <>
       <Checkbox.Group style={{ width: "100%" }} onChange={onChange}>
         <Row>
-          <Col span={6}>
-            <Checkbox value="Nam">Nam</Checkbox>
-          </Col>
-          <Col span={6}>
-            <Checkbox value="Nữ">Nữ</Checkbox>
-          </Col>
-          <Col span={6}>
-            <Checkbox value="Unisex">Unisex</Checkbox>
-          </Col>
+          {plainOptions.map((size) => (
+            <Col span={6}>
+              <Checkbox
+                value={size}
+                className="checkboxStyle"
+                style={{ width: "auto" }}
+              >
+                {size}
+              </Checkbox>
+            </Col>
+          ))}
         </Row>
       </Checkbox.Group>
     </>

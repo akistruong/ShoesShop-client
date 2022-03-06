@@ -1,39 +1,57 @@
 import React from "react";
+import "./index.css";
 import { Checkbox, Row, Col } from "antd";
-const FilterColor = () => {
+const FilterColor = ({ colours, setColours }) => {
   const plainOptions = [
-    "RED",
-    "Blue",
-    "Black",
-    "RED1",
-    "Blue1",
-    "Black1",
-    "RED2",
-    "Blue2",
-    "Black2",
+    {
+      color: {
+        name: "Black",
+        hex: "#000000",
+      },
+    },
+    {
+      color: {
+        name: "Brown",
+        hex: "#964B00",
+      },
+    },
+    {
+      color: {
+        name: "Green",
+        hex: "#00FF00",
+      },
+    },
+    {
+      color: {
+        name: "Organe",
+        hex: "#CC5500",
+      },
+    },
+    {
+      color: {
+        name: "Blue",
+        hex: "#0096FF",
+      },
+    },
   ];
   const onChange = (e) => {
-    console.log(e);
+    setColours(e);
   };
   return (
     <>
       <Checkbox.Group style={{ width: "100%" }} onChange={onChange}>
         <Row>
-          <Col span={6}>
-            <Checkbox value="A">A</Checkbox>
-          </Col>
-          <Col span={6}>
-            <Checkbox value="B">B</Checkbox>
-          </Col>
-          <Col span={6}>
-            <Checkbox value="C">C</Checkbox>
-          </Col>
-          <Col span={6}>
-            <Checkbox value="D">D</Checkbox>
-          </Col>
-          <Col span={6}>
-            <Checkbox value="E">E</Checkbox>
-          </Col>
+          {plainOptions.map((options, index) => (
+            <Col span={8} key={index}>
+              <Checkbox
+                value={options.color.name}
+                className="checkboxStyle"
+                style={{ backgroundColor: options.color.hex, color: "#333" }}
+              >
+                {options.color.name}
+              </Checkbox>
+            </Col>
+          ))}
         </Row>
       </Checkbox.Group>
     </>

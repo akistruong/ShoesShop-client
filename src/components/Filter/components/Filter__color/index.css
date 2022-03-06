@@ -1,0 +1,9 @@
+.colorBoxUi {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

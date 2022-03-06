@@ -66,3 +66,22 @@ img {
     cursor: pointer;
   }
 }
+.Ahihi {
+  display: flex;
+  flex-wrap: wrap;
+}
+.checkboxStyle {
+  display: inline-block;
+  width: 80px;
+  max-width: 100px;
+  border: 1px solid black;
+  margin: 2px !important;
+  padding: 2px !important;
+  border-radius: 4px;
+}
+.Spin {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,4 +1,5 @@
 .Filter {
+  z-index: 2;
   width: 100%;
   max-width: 300px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -8,4 +9,22 @@
 .Filter > div {
   padding: 4px;
   border-bottom: 1px solid rgb(161, 156, 156);
+}
+.Filter > .Btn__submit {
+  position: relative;
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s ease;
+  margin-top: 8px;
+}
+.Filter > .Btn__submit:hover {
+  background-color: black;
+  color: white;
+}
+.Filter > .Btn__submit > .Spin__submit {
+  position: absolute;
+  right: 25%;
 }

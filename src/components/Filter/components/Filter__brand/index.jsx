@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Checkbox, Row, Col } from "antd";
 const FilterBrand = () => {
+  useEffect(() => {});
+
   const plainOptions = [
     "RED",
     "Blue",

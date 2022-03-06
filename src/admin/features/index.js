@@ -13,10 +13,12 @@ const AdminRouter = [
   {
     path: "/admin-dashbroad",
     element: <MainDashbroad />,
+    private: true,
   },
   {
     path: "/admin-productDashbroad",
     element: <ProductDashbroad />,
+    private: true,
   },
 ];
 

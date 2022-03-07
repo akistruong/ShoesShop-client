@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductList.css";
-import ProductCard from "../../../../components/ProductCard";
+import ProductCard from "../../../components/ProductCard";
 import { Row, Col } from "antd";
 const ProductList = ({ list = [1, 2, 3, 4, 5, 6] }) => {
   return (

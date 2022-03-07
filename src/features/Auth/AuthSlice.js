@@ -4,7 +4,7 @@ const AuthSlice = createSlice({
   name: "Auth",
   initialState: {
     isLoading: false,
-    isLoging: false,
+    isUser: false,
     isAdmin: false,
     Token: "",
   },
@@ -15,7 +15,11 @@ const AuthSlice = createSlice({
     });
     builder.addCase(AuthApi.LoginUser.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.isLoging = action.payload.success;
+      state.isUser = action.payload.success;
+      state.Token = action.payload.Token;
+      if (action.payload.success) {
+        localStorage.setItem("access__token", action.payload.Token);
+      }
     });
     //REGISTER USER
     builder.addCase(AuthApi.RegisterUser.pending, (state) => {
@@ -23,7 +27,10 @@ const AuthSlice = createSlice({
     });
     builder.addCase(AuthApi.RegisterUser.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.isLoging = action.payload.success;
+      state.isUser = action.payload.success;
+      if (action.payload.success) {
+        localStorage.setItem("access__token", action.payload.Token);
+      }
     });
     //LOGIN ADMIN
     builder.addCase(AuthApi.LoginAdmin.pending, (state) => {
@@ -33,6 +40,18 @@ const AuthSlice = createSlice({
       state.isLoading = false;
       state.isAdmin = action.payload.success;
       state.Token = action.payload.Token;
+      if (action.payload.success) {
+        localStorage.setItem("access__token", action.payload.Token);
+      }
+    });
+    //Auth
+    builder.addCase(AuthApi.Auth.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(AuthApi.Auth.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.isAdmin = action.payload.isAdmin || false;
+      state.isUser = action.payload.isUser || false;
     });
   },
 });

@@ -13,6 +13,10 @@ const AuthApi = {
     const url = `/auth/admin`;
     return axiosClient.post(url, body);
   },
+  Auth: () => {
+    const url = `/auth`;
+    return axiosClient.post(url);
+  },
 };
 
 export default AuthApi;

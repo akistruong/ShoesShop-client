@@ -1,18 +1,25 @@
 import "./App.less";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import Filter from "./components/Filter";
 import AdminRouter from "./admin/features";
+import UserRouter from "./features";
 import { Suspense, useEffect } from "react";
-import { Selector } from "./features/Auth/AuthSlice";
 import { useSelector, useDispatch } from "react-redux";
+import useAuth from "./hooks/useAuth";
 const NULL = () => {
   return <h1>NULL</h1>;
 };
 function App() {
-  useEffect(() => {}, []);
-  const isAdmin = useSelector(Selector.getIsAdmin);
+  const { Auth } = useAuth();
+  const dispatch = useDispatch();
+  const isAdmin = useSelector((state) => state.Auth.isAdmin);
+  const isUser = useSelector((state) => state.Auth.isUser);
+  useEffect(() => {
+    console.log("APP RERENDER");
+    Auth();
+  }, []);
 
-  console.log("APP RERENDER");
   return (
     <div className="App">
       <BrowserRouter>
@@ -23,6 +30,18 @@ function App() {
                 <Route
                   path={item.path}
                   element={isAdmin ? item.element : <NULL />}
+                />
+              ) : (
+                <Route path={item.path} element={item.element}></Route>
+              );
+            })}
+          </Routes>
+          <Routes>
+            {UserRouter.map((item) => {
+              return item.private ? (
+                <Route
+                  path={item.path}
+                  element={isUser || isAdmin ? item.element : <NULL />}
                 />
               ) : (
                 <Route path={item.path} element={item.element}></Route>

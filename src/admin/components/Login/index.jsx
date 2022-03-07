@@ -10,14 +10,11 @@ const Login = () => {
   const isAdmin = useSelector(Selector.getIsAdmin);
   const Token = useSelector(Selector.getToken);
   console.log(isAdmin);
-  if (isAdmin) {
-    Nav("/admin-dashbroad");
-    localStorage.setItem("access__token", Token);
-  }
+
   const SubmitLogin = () => {
     dispatch(
-      AuthApi.LoginAdmin({
-        email: "truongkiet.hn289@gmail.com",
+      AuthApi.LoginUser({
+        email: "truongkiet.hn288@gmail.com",
         password: "123456",
       })
     );

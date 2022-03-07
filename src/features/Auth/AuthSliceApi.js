@@ -24,3 +24,11 @@ export const LoginAdmin = createAsyncThunk("LoginAdmin", async (body) => {
     console.log(error);
   }
 });
+export const Auth = createAsyncThunk("Auth", async () => {
+  try {
+    const response = await AuthApi.Auth();
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+});

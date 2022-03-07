@@ -1,0 +1,8 @@
+.ControllerBar {
+  width: 350px;
+  height: 100vh;
+}
+.Controller__menu--large__device {
+  display: flex;
+  flex-direction: column;
+}

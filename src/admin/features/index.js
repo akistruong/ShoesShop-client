@@ -9,16 +9,17 @@ const AdminRouter = [
   {
     path: "/admin-login",
     element: <LoginAdmin />,
+    private: false,
   },
   {
     path: "/admin-dashbroad",
     element: <MainDashbroad />,
-    private: true,
+    private: false,
   },
   {
     path: "/admin-productDashbroad",
     element: <ProductDashbroad />,
-    private: true,
+    private: false,
   },
 ];
 

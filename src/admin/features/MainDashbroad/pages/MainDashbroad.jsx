@@ -1,7 +1,16 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import useAuth from "../../../../hooks/useAuth";
+import ControlBar from "../components/controlBar";
 const MainDashbroad = () => {
-  return <div>MainDashbroad</div>;
+  // const { Auth } = useAuth();
+  // useEffect(() => {
+  //   Auth();
+  // }, []);
+  return (
+    <div className="MainDashbroad">
+      <ControlBar />
+    </div>
+  );
 };
 
 export default MainDashbroad;

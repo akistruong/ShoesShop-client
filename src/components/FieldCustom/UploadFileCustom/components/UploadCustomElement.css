@@ -1,0 +1,41 @@
+.UploadCard {
+  position: relative;
+  max-width: 150px;
+  width: 100%;
+  display: flex;
+}
+.FileContainer {
+  width: 100%;
+}
+.UploadCard .FileContainer > input {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+input[type="file"]::file-selector-button {
+  cursor: pointer;
+}
+.UploadCard > input > #file-upload-button {
+}
+.btn--ChooseFile {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  text-align: center;
+  border: 1px solid black;
+  transition: 0.3s ease;
+}
+.btn--ChooseFile {
+}
+.icon--Upload {
+  color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  cursor: pointer;
+}

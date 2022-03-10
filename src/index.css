@@ -48,12 +48,11 @@ svg {
 }
 .btn {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid black;
   transition: 0.3s;
   text-align: center;
   cursor: pointer;
-  border-radius: 4px;
 }
 .btn:hover {
   background-color: black;
@@ -65,9 +64,11 @@ img {
   object-fit: cover;
 }
 input {
-  outline: unset;
-  border: unset;
+  outline: none;
+  border: 1px solid black;
   padding: 8px;
+  max-width: 100%;
+  border-radius: 4px;
 }
 @media screen and (min-width: 1024px) {
   section {

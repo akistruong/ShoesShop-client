@@ -1,7 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const useSelector = () => {
-  return <div>useSelector</div>;
+const useSelectorCustom = () => {
+  let imgs = useSelector((state) => state.Upload.imgs);
+  let img = useSelector((state) => state.Upload.img);
+  return {
+    imgs,
+    img,
+  };
 };
 
-export default useSelector;
+export default useSelectorCustom;

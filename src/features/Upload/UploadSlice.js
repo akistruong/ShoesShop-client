@@ -4,14 +4,17 @@ import * as UploadApiSlice from "./UploadSliceApi";
 const UploadSlice = createSlice({
   name: "UploadSlice",
   initialState: {
-    imgs: [],
-    img: {
-      isLoading: false,
-    },
+    isLoading: false,
+    imgs: [
+      {
+        url: "",
+        public_id: "",
+      },
+    ],
   },
   reducers: {
-    UploadImg(state, action) {
-      state.img.isLoading = action.payload;
+    setLoading(state, action) {
+      state.isLoading = action.payload;
     },
   },
 
@@ -27,13 +30,9 @@ const UploadSlice = createSlice({
         state.imgs = action.payload.Files;
       }
     );
-    builder.addCase(UploadApiSlice.DestroyImgsProduct.pending, (state) => {
-      state.img.isLoading = true;
-    });
     builder.addCase(
       UploadApiSlice.DestroyImgsProduct.fulfilled,
       (state, action) => {
-        state.img.isLoading = true;
         state.imgs.splice(action.payload, 1);
       }
     );

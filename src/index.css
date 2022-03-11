@@ -67,7 +67,7 @@ input {
   outline: none;
   border: 1px solid black;
   padding: 8px;
-  max-width: 100%;
+  width: 100%;
   border-radius: 4px;
 }
 @media screen and (min-width: 1024px) {
@@ -81,7 +81,7 @@ input {
     display: inline;
   }
   svg {
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
   }
 }
@@ -103,4 +103,6 @@ input {
   top: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
+}
+.ant-upload-list {
 }

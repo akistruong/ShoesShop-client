@@ -32,7 +32,7 @@ const menu = (
     </ul>
   </div>
 );
-const Header = () => {
+export const Header = () => {
   console.log("HEADER RERENDER");
   return (
     <div className="Header">
@@ -61,5 +61,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

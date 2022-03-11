@@ -1,2 +1,3 @@
-export * from "./TextFieldCustom/FieldCustom";
+export * from "./TextFieldCustom";
 export * from "./UploadFileCustom";
+export * from "./CheckboxFieldCustom";

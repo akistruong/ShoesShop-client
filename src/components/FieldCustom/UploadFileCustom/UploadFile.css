@@ -1,3 +1,6 @@
 .UploadCustom {
   display: flex;
 }
+.UploadCustom > span {
+  width: 100%;
+}

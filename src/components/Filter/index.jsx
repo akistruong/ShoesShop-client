@@ -7,7 +7,7 @@ import FilterBrand from "./components/Filter__brand";
 import { useDispatch } from "react-redux";
 import * as ProductApi from "../../features/Product/ProductSliceApi";
 import { Spin, Space } from "antd";
-const Filter = () => {
+export const Filter = () => {
   console.log("REREDNER FILTER");
   const dispatch = useDispatch();
   const [gender, setGender] = useState([]);
@@ -46,5 +46,3 @@ const Filter = () => {
     </div>
   );
 };
-
-export default Filter;

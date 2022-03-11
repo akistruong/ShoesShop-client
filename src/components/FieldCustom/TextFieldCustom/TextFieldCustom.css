@@ -1,0 +1,10 @@
+.TextField {
+  display: flex;
+  flex-direction: column;
+}
+.error {
+  color: red;
+}
+.TextField__label {
+  font-weight: 600;
+}

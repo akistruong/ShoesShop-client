@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./UploadFile.css";
 import { Upload, Button } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
 import { BASE__API__URL } from "../../../const";
 import useDispatchCustom from "../../../hooks/useDispatch";
 import useSelectorCustom from "../../../hooks/useSelector";
@@ -31,7 +32,14 @@ export const UploadCustom = ({ setFieldValue }) => {
   return (
     <div className="UploadCustom">
       <Upload {...props} name="imgs" multiple on>
-        <Button>UPLOAD</Button>
+        <Button
+          icon={<UploadOutlined className="icons" />}
+          type="primary"
+          size="large"
+          style={{ display: "flex", alignItems: "center" }}
+        >
+          UPLOAD
+        </Button>
       </Upload>
     </div>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import { Form, Formik, Field } from "formik";
 import { UploadCustom } from "../../../../../../components/FieldCustom";
 import "./ProductForm.css";
-import FileList from "../../../../../../components/FieldCustom/UploadFileCustom/components/FileList";
 import * as Yup from "yup";
 const ProductForm = ({ values = {} }) => {
   const validate = Yup.object({
@@ -40,7 +39,6 @@ const ProductForm = ({ values = {} }) => {
         (
           <Form className="FormProduct">
             <UploadCustom setFieldValue={setFieldValue} />
-            <FileList list={values.imgs} />
           </Form>
         )
       )}

@@ -3,10 +3,13 @@ import { useSelector } from "react-redux";
 
 const useSelectorCustom = () => {
   let imgs = useSelector((state) => state.Upload.imgs);
-  let img = useSelector((state) => state.Upload.img);
-  return {
+  let isLoading = useSelector((state) => state.Upload.isLoading);
+  const UploadSelector = {
     imgs,
-    img,
+    isLoading,
+  };
+  return {
+    UploadSelector,
   };
 };
 

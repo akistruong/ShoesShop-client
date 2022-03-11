@@ -15,6 +15,7 @@ export const DestroyImgsProduct = createAsyncThunk(
   "DestroyImgsProduct",
   async (body) => {
     try {
+      console.log("BODY", body);
       const response = await UploadApi.DestroyImgsProduct(body);
       return response;
     } catch (error) {

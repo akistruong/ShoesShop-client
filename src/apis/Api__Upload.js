@@ -7,7 +7,7 @@ const UploadApi = {
   },
   DestroyImgsProduct: (body) => {
     const url = `destroy-img`;
-    return axiosClient.delete(url, body);
+    return axiosClient.post(url, body);
   },
 };
 

@@ -5,12 +5,7 @@ const UploadSlice = createSlice({
   name: "UploadSlice",
   initialState: {
     isLoading: false,
-    imgs: [
-      {
-        url: "",
-        public_id: "",
-      },
-    ],
+    imgs: [],
   },
   reducers: {
     setLoading(state, action) {
@@ -20,23 +15,30 @@ const UploadSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(UploadApiSlice.UploadImgsProduct.pending, (state) => {
-      state.img.isLoading = true;
+      state.isLoading = true;
     });
     builder.addCase(
       UploadApiSlice.UploadImgsProduct.fulfilled,
       (state, action) => {
         console.log(action.payload.Files);
-        state.img.isLoading = true;
+        state.isLoading = false;
         state.imgs = action.payload.Files;
       }
     );
+    builder.addCase(UploadApiSlice.DestroyImgsProduct.pending, (state) => {
+      state.isLoading = true;
+    });
     builder.addCase(
       UploadApiSlice.DestroyImgsProduct.fulfilled,
       (state, action) => {
-        state.imgs.splice(action.payload, 1);
+        state.imgs = state.imgs.filter(
+          (item) => item.public_id != action.payload.id
+        );
+
+        state.isLoading = false;
       }
     );
   },
 });
-export const { UploadImg } = UploadSlice.actions;
+export const { setLoading } = UploadSlice.actions;
 export default UploadSlice.reducer;

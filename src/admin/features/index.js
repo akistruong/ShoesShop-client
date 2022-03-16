@@ -12,7 +12,7 @@ const AdminRouter = [
     private: false,
   },
   {
-    path: "/admin-dashbroad",
+    path: "/admin/*",
     element: <MainDashbroad />,
     private: false,
   },

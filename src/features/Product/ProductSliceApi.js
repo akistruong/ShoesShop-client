@@ -12,6 +12,17 @@ export const getAllProducts = createAsyncThunk(
     }
   }
 );
+export const createProduct = createAsyncThunk(
+  "createProduct",
+  async (params) => {
+    try {
+      const response = await ProductApi.createProduct(params);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 export const getSingleProduct = createAsyncThunk(
   "getSingleProduct",
   async (id) => {
@@ -25,7 +36,10 @@ export const deleteProduct = createAsyncThunk("deleteProduct", async (id) => {
   return response;
 });
 
-export const Update = createAsyncThunk("updateProduct", async (id, payload) => {
-  const response = await ProductApi.updateProduct(id, payload);
-  return response;
-});
+export const updateProduct = createAsyncThunk(
+  "updateProduct",
+  async (id, payload) => {
+    const response = await ProductApi.updateProduct(id, payload);
+    return response;
+  }
+);

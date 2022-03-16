@@ -11,6 +11,10 @@ const UploadSlice = createSlice({
     setLoading(state, action) {
       state.isLoading = action.payload;
     },
+    UploadImgsProduct(state, action) {
+      console.log(action.payload);
+      state.imgs = action.payload;
+    },
   },
 
   extraReducers: (builder) => {
@@ -31,14 +35,20 @@ const UploadSlice = createSlice({
     builder.addCase(
       UploadApiSlice.DestroyImgsProduct.fulfilled,
       (state, action) => {
-        state.imgs = state.imgs.filter(
-          (item) => item.public_id != action.payload.id
-        );
-
+        if (action.payload.imgsRemain) {
+          console.log("EDIT", action.payload.imgsRemain);
+          state.imgs = action.payload.imgsRemain;
+        } else {
+          console.log("NOEDIT", state.imgs, action.payload);
+          state.imgs = state.imgs.filter((item) => {
+            console.log({ item });
+            return item.public_id != action.payload.id;
+          });
+        }
         state.isLoading = false;
       }
     );
   },
 });
-export const { setLoading } = UploadSlice.actions;
+export const { setLoading, UploadImgsProduct } = UploadSlice.actions;
 export default UploadSlice.reducer;

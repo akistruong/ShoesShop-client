@@ -1,6 +1,7 @@
 .ControllerBar {
-  width: 350px;
-  height: 100vh;
+  z-index: 2;
+  position: absolute;
+  width: 30%;
 }
 .Controller__menu--large__device {
   display: flex;
@@ -11,4 +12,18 @@
 }
 .ControlBar__menu .ant-menu-inline {
   background-color: black !important;
+}
+.Controller__menu--large__device {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .Controller__menu--small__device {
+    display: none;
+  }
+  .Controller__menu--large__device {
+    display: block;
+  }
+  .ControllerBar {
+    position: relative;
+  }
 }
